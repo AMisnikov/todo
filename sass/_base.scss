@@ -1,0 +1,54 @@
+$color-primary: #AF7EEB;
+$color-primary-light: #E3E9FF;
+
+$text-color-light: #DEE5F8;
+$text-color: #A6AEC8;
+
+@mixin media ($width, $sign:"<") {
+
+    @if $sign == "<" {@media only screen and (max-width: $width/16 + "em") {@content}};
+
+    @if $sign == ">" {@media only screen and (min-width: $width/16 + "em") {@content}}; 
+    
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+
+}
+
+body {
+   //background-image: linear-gradient($color-primary-light, $color-primary);
+   //background-repeat: no-repeat;
+   font-family: 'Questrial', sans-serif;
+   position: relative;
+   
+   background-color: $color-primary-light ;
+   min-height: 100vh;
+   padding: 3rem 0;
+   display: flex;
+   justify-content: center;
+   //align-items: center;
+}
+
+.container {
+    width: 100%;;
+    max-width: 50rem;
+}
+
+::selection {
+    background-color: $color-primary; 
+    color: #fff;
+}
+
+
+
