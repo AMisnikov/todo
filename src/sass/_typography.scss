@@ -1,0 +1,19 @@
+@font-face {
+    font-family: 'fontello';
+    src: url('../../public/static-files/font/fontello.eot?34138216');
+    src: url('../../public/static-files/font/fontello.eot?34138216#iefix') format('embedded-opentype'),
+         url('../../public/static-files/font/fontello.woff2?34138216') format('woff2'),
+         url('../../public/static-files/font/fontello.woff?34138216') format('woff'),
+         url('../../public/static-files/font/fontello.ttf?34138216') format('truetype'),
+         url('../../public/static-files/font/fontello.svg?34138216#fontello') format('svg');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+
+.main-heading {
+    font-family: 'Righteous', cursive;
+    color: #fff;
+    font-size: 2rem;
+    text-transform: uppercase;
+}
