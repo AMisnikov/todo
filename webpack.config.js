@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtratcPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 
@@ -64,7 +65,7 @@ module.exports = (env, argv) => {
             },
             plugins: [
                 new CleanWebpackPlugin({
-                    cleanOnceBeforeBuildPatterns: ['**/*', '!static-files*', '!static-files/**/*']
+                    cleanOnceBeforeBuildPatterns: ['**/*']
                 }),
                 new MiniCssExtratcPlugin({
                     filename: devMode ? 'style.css' : 'style.[contenthash].css',
@@ -73,6 +74,11 @@ module.exports = (env, argv) => {
                 new HtmlWebpackPlugin(
                     {
                     template: 'src/index.html'
+                }),
+                new CopyPlugin({
+                    patterns: [
+                        {from: 'src/assets/font', to: 'assets/font'}
+                    ]
                 })
             ],
             optimization: {

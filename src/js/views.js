@@ -42,11 +42,14 @@ const generateToDoItem = (todo) => {
     });
 
     const label = document.createElement('label');
-    label.setAttribute('class', 'todo__status');
+    label.setAttribute('class', 'todo__label');
     label.setAttribute('for', todo.id);
 
+    const icon = document.createElement('span');
+    icon.setAttribute('class', 'todo__icon');
+
     const content = document.createElement('span');
-    content.setAttribute('class', 'todo__content');
+    content.setAttribute('class', 'todo__text');
     content.textContent = todo.content;
 
     const btnDelete = document.createElement('button');
@@ -56,9 +59,11 @@ const generateToDoItem = (todo) => {
         renderTodos();
     });
 
+    label.appendChild(icon);
+    label.appendChild(content);
+
     todoItem.appendChild(checkbox);
     todoItem.appendChild(label);
-    todoItem.appendChild(content);
     todoItem.appendChild(btnDelete);
 
     return todoItem;

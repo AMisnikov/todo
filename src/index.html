@@ -20,21 +20,22 @@
                 <label for="completed-filter" class="filters__completed-text" >Hide completed</label>
             </div>
             <ul class="todo__list">
-
-                
             </ul>
             <button class="btn-add">Add task</button>
         </main>
         
     </div>
     <div class="popup">
-            <form class="add-task">
-               
-                    <input type="text" class="add-task__field" placeholder="type task here">
-                    <button class="add-task__btn add-task__btn--add"></button>
-                    <button class="add-task__btn add-task__btn--close"></button>
-               
-            </form>
+            <div class="popup__overlay"></div>
+            <div class="popup__content">
+                <form id="add-task" class="add-task">
+                    <input  type="text" name='todo' class="add-task__field" placeholder="type task here">
+                    <button type="submit" class="add-task__btn"> Add</button>
+                </form>
+                <button class="popup__btn-close"></button>
+            </div>
+            
+            
     </div>
     
     

@@ -1,0 +1,80 @@
+.add-task {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+&__field {
+    font-size: 4rem;
+    border: none;
+    outline: none;
+    border: 1px solid $text-color;
+    border-radius: 3px;
+    padding: 1rem;
+    color: $color-primary;
+    text-align: center;
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 50rem;
+
+    @media only screen and (max-width: 900px) {
+        font-size: 2.5rem;
+    }
+
+    &:focus {
+        border-color: $color-primary;
+    }
+
+    &::placeholder {
+        color: $text-color;
+    }
+}
+
+&__btn {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    height: 6rem;
+    width: 100%;
+    max-width: 50rem;
+    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .2s;
+    border-radius: 3px;
+    background-color: $color-primary;
+    color: #fff;
+    font-size: 3rem;
+
+    @media only screen and (max-width: 900px) {
+        font-size: 2rem;
+        height: 4rem;
+    }
+
+    &:active {
+    transform: translateY(3px);
+    }
+  
+    &::before {
+        
+        font-family: "fontello";
+        font-style: normal;
+        font-weight: normal;
+        display: inline-block;
+        margin-right: 1rem;
+        text-align: center;
+        font-size: 3.8rem;
+        content: '\e800';
+        color: #fff;
+
+        @media only screen and (max-width: 900px) {
+            font-size: 2rem;
+        }
+        
+    }
+    
+
+}
+
+}

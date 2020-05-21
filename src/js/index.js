@@ -6,9 +6,8 @@ import '../sass/main.scss';
 
 //DOM elements
 const addBtn = document.querySelector('.btn-add');
-const closeBtn = document.querySelector('.add-task__btn--close');
-const addTaskBtn = document.querySelector('.add-task__btn--add');
-const addTaskField = document.querySelector('.add-task__field');
+const popup = document.querySelector('.popup');
+const addTaskForm = document.getElementById('add-task');
 const textFilter = document.querySelector('#text-filter');
 const hideCompletedFilter = document.querySelector('#completed-filter');
 
@@ -18,22 +17,30 @@ renderTodos();
 //Popup maniplation
 addBtn.addEventListener('click', () => {
     openPopup();
-    addTaskField.focus();
 });
 
-closeBtn.addEventListener('click', () => {
-    closePopup();
+popup.addEventListener('click', (e) => {
+    if(e.target.classList.contains('popup__overlay') || e.target.classList.contains('popup__btn-close')) {
+        closePopup();
+    }
+});
+
+document.addEventListener('keydown', (e) => {
+    if(e.keyCode === 27) {
+        closePopup();
+    }
 });
 
 //Adding new task
-addTaskBtn.addEventListener('click', () => {
-    
-    createTodo(addTaskField.value);
-    addTaskField.value = '';
-    closePopup();
-    renderTodos();
-
-    
+addTaskForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const todoText = e.target.elements.todo.value;
+    if(todoText) {
+        createTodo(todoText);
+        e.target.elements.todo.value = '';
+        closePopup();
+        renderTodos();  
+    }
 });
 
 //Filtering Todos
